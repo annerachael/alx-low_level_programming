@@ -12,9 +12,8 @@
 
 int add(int n1, int n2)
 {
-	int sum;
+	int i; 
+	int j;
+	return i+j;
 
-	sum = n1 + n2;
-
-	return (sum);
 }

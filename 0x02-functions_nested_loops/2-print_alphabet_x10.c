@@ -8,19 +8,15 @@
 
 void print_alphabet_x10(void)
 {
-	int round = 0;
-	char letter = 'a';
+	int i = 0;
+	int ch;
+	for (i=0;i<10;i++){
 
-	while (round < 10)
-	{
-		letter = 'a';
-		while (letter <= 'z')
-		{
-			_putchar(letter);
-			letter++;
-		}
-		_putchar('\n');
-
-		round++;
+		for (ch ='a'; ch <='z'; ch++)
+			putchar(ch);
+			putchar('\n');
 	}
+	i++;
+	return;
+	
 }

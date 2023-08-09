@@ -17,3 +17,5 @@ free(grid[index]);
 free(grid);
 
 }
+
+

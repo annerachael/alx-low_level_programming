@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * argstostr - Concatenates all arguments of the program into a string;
@@ -42,4 +43,18 @@ str[index++] = '\n';
 str[size] = '\0';
 
 return (str);
+}
+
+int main(int ac, char *av[])
+{
+    char *s;
+
+    s = argstostr(ac, av);
+    if (s == NULL)
+    {
+        return (1);
+    }
+    printf("%s", s);
+    free(s);
+    return (0);
 }

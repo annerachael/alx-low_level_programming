@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
  * str_concat - Concatenates two strings.
  * @s1: The string to be concatenated upon.
@@ -36,4 +36,18 @@ for (index = 0; s2[index]; index++)
 concat_str[concat_index++] = s2[index];
 
 return (concat_str);
+}
+int main(void)
+{
+    char *s;
+
+    s = str_concat("Betty ", "Holberton");
+    if (s == NULL)
+    {
+        printf("failed\n");
+        return (1);
+    }
+    printf("%s\n", s);
+    free(s);
+    return (0);
 }

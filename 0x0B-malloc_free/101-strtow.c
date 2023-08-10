@@ -14,28 +14,6 @@ char **strtow(char *str);
  * Return: The index marking the end of the initial word pointed to by str.
  */
 
-void print_tab(char **tab)
-{
-    int i;
-
-    for (i = 0; tab[i] != NULL; ++i)
-    {
-        printf("%s\n", tab[i]);
-    }
-}
-
-int word_len(char *str)
-{
-int index = 0, len = 0;
-
-while (*(str + index) && *(str + index) != ' ')
-{
-len++;
-index++;
-}
-
-return (len);
-}
 
 /**
  * count_words - Counts the number of words contained within a string.
@@ -113,16 +91,3 @@ strings[w] = NULL;
 return (strings);
 }
 
-int main(void)
-{
-    char **tab;
-
-    tab = strtow("      ALX School         #cisfun      ");
-    if (tab == NULL)
-    {
-        printf("Failed\n");
-        return (1);
-    }
-    print_tab(tab);
-    return (0);
-}

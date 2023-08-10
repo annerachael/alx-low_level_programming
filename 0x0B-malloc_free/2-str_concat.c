@@ -9,45 +9,30 @@
  * Return: If concatenation fails - NULL.
  * Otherwise - a pointer the newly-allocated space in memory
  * containing the concatenated strings.
- */
-char *str_concat(char *s1, char *s2)
-{
-char *concat_str;
-int index, concat_index = 0, len = 0;
+ */ 
+char *str_concat(char *s1, char *s2) {
+  if (s1 == NULL) {
+    s1 = "";
+  }
 
-if (s1 == NULL)
-s1 = "";
+  if (s2 == NULL) {
+    s2 = "";
+  }
 
-if (s2 == NULL)
-s2 = "";
+  int length1 = strlen(s1);
+  int length2 = strlen(s2);
+  int total_length = length1 + length2 + 1; // +1 for the null terminator
+  char *new_str = malloc(sizeof(char) * total_length);
+  if (new_str == NULL) {
+    return NULL;
+  }
 
-for (index = 0; s1[index] || s2[index]; index++)
-len++;
+  strcpy(new_str, s1);
+  strcat(new_str, s2);
 
-concat_str = malloc(sizeof(char) * len);
-
-if (concat_str == NULL)
-return (NULL);
-
-for (index = 0; s1[index]; index++)
-concat_str[concat_index++] = s1[index];
-
-for (index = 0; s2[index]; index++)
-concat_str[concat_index++] = s2[index];
-
-return (concat_str);
+  return new_str;
 }
-int main(void)
-{
-    char *s;
 
-    s = str_concat("Betty ", "Holberton");
-    if (s == NULL)
-    {
-        printf("failed\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
+  return new_str;
 }
+
